@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <html>
+
+        <head>
+            
+            <title>Document</title>
+        </head>
+        
+        <body>
+            <section id="Grades">
+                <div class="container">
+                    <h1 class="display=1 text-warning">GRADE CHECK</h1>
+                    <input type="number" id="input" class="form-control">
+                    <button onclick="person()" class="btn-outline-warning btn">CHECK</button>
+                </div>
+        
+                <div id="nograde">
+                </div>
+            </section>
+        
+        
+            <section id="Jackets">
+                <div class="container">
+                    <h1 class="display=1 text-warning">SHOULD I CARRY JACKET</h1>
+                    <input type="number" id="inputTemp" class="form-control">
+                    <button onclick="temp()" class="btn-outline-danger btn">CHECK</button>
+                </div>
+        
+                <div id="temperature">
+                </div>
+            </section>
+        
+            <section id="Currency Converter">
+                <div class="container">
+                    <h1 class="display=1 text-warning">CURRENCY CONVERTER </h1>
+                    <input type="number" placeholder="Pkr to $" id="pkr" class="form-control">
+                    <button class="btn btn-outline-info" onclick="PakCoverter()">CONVERT</button>
+        
+                    <input type="number" placeholder="$ to Pkr" id="dollar" class="form-control">
+                    <button class="btn btn-outline-info" onclick="DollarConverter()">CONVERT</button>
+                    <div id="currencyResult">
+        
+                    </div>
+                </div>
+        
+        
+            </section>
+        </body>
+        
+        <script>
+            const person = () => {
+                var result = document.getElementById("input").value;
+                if (result >= 50 && result < 60) {
+                    document.getElementById("nograde").innerHTML = `<h1>C</h1>`
+                }
+        
+                else if (result >= 60 && result < 70) {
+                    document.getElementById("nograde").innerHTML = `<h1>B</h1>`
+                }
+        
+                else if (result >= 70 && result < 80) {
+                    document.getElementById("nograde").innerHTML = `<h1>A</h1>`
+                }
+        
+                else if (result >= 80 && result < 90) {
+                    document.getElementById("nograde").innerHTML = `<h1>A+</h1>`
+                }
+        
+                else if (result >= 90) {
+                    document.getElementById("nograde").innerHTML = `<h1>A++</h1>`
+                }
+        
+        
+                else {
+                    document.getElementById("nograde").innerHTML = `<h1>Plx Enter The Correct Field</h1>`
+                }
+            }
+        
+            const temp = () => {
+                var temprature = document.getElementById("inputTemp").value;
+                if (temprature >= 25 && temprature <= 50) {
+                    document.getElementById("temperature").innerHTML = `<h1><U> DON'T CARRY JACKET</U></h1>`
+                }
+        
+                else if (temprature < 25 && temprature >= 15) {
+                    document.getElementById("temperature").innerHTML = `<h1><U>CARRY JACKET</U></h1>`
+                }
+        
+                else if (temprature < 15 && temprature > 0) {
+                    document.getElementById("temperature").innerHTML = `<h1><U>CARRY COAT</U></h1>`
+                }
+        
+                else if (temprature < 0) {
+                    document.getElementById("temperature").innerHTML = `<h1><U>DON'T GO OUT</h1>`
+                }
+        
+               
+            }
+        
+            const PakCoverter = () => {
+                const pkr = document.getElementById('pkr').value;
+                var result = pkr / 170;
+                if (pkr > 0) {
+        
+                    document.getElementById('currencyResult').innerHTML = `<h1>${result}$</h1>`;
+                }
+               
+            }
+        
+            const DollarConverter = () => {
+                const dlr = document.getElementById("dollar").value;
+        
+                var result = dlr * 170;
+                if (dlr > 0) {
+        
+                    document.getElementById('currencyResult').innerHTML = `<h1>${result} Rs</h1>`;
+                }
+                
+            }
+        
+        </script>
+        
+        </html>
